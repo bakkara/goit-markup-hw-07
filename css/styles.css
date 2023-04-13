@@ -106,7 +106,7 @@ img {
   font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 18px;
-  line-height: 1.33;
+  line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--color-iris);
@@ -119,8 +119,8 @@ img {
 
 /**-----Header-----**/
 .header {
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   border-bottom: 1px solid var(--color-cornflower);
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
@@ -219,11 +219,16 @@ img {
   color: var(--color-navy-blue);
   transition: color var(--transition);
 }
+.mobile-menu-link.current {
+  color: var(--color-ocean);
+}
+.mobile-menu-nav {
+  margin-bottom: auto;
+}
 .mobile-menu-list {
   display: flex;
   gap: 40px;
   flex-direction: column;
-  margin-bottom: 284px;
 }
 
 .mobile-menu-link:is(:hover, :focus) {
@@ -231,9 +236,15 @@ img {
   outline: transparent;
 }
 
-
-
-.mobile-contacts {
+.mobile-address {
+  margin-bottom: 0 auto;
+}
+.mobile-contacts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.mobile-contacts-mail {
   display: block;
   font-style: normal;
   font-weight: 500;
@@ -243,7 +254,10 @@ img {
   color: var(--color-slate);
   margin-bottom: 40px;
 }
-.mobile-contacts:is(:hover, :focus){
+
+.mobile-contacts-tel{
+  display: block;
+  font-style: normal; 
   font-weight: 700;
   font-size: 35px;
   line-height: 1.11;
@@ -289,7 +303,7 @@ img {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url("../images/people-office-1.jpg");
+    url("../images/people-office-1-mob.jpg");
   margin-left: auto;
   margin-right: auto;
   background-repeat: no-repeat;
@@ -298,6 +312,17 @@ img {
   background-color: var(--color-grey);
   padding: 112px 0;
   text-align: center;
+}
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url("../images/people-office-1-mob-2x.jpg");
+  }
 }
 
 .caption {
@@ -424,8 +449,7 @@ img {
 }
 .team-soc-list {
   display: flex;
-  justify-content: center;
-  gap: 24px;
+  justify-content: space-between;
 }
 .team-soc-list-item {
   width: 40px;
@@ -630,17 +654,18 @@ img {
 
 /*---------Portfolio---------- !*/
 .section.portfolio {
-  padding-top: 96px;
+  padding-top: 48px;
+  padding-bottom: 48px;
 }
 .projects-list {
-  display: flex;
-  flex-wrap: wrap;
-  row-gap: 48px;
-  column-gap: 24px;
+  display: block;
 }
 .projects-list-item {
-  width: calc((100% - 48px)/3);
   background: #ffffff;
+  
+}
+.projects-list-item:not(:last-child) {
+  margin-bottom: 48px;
 }
 .projects-link {
   display: block;
@@ -675,14 +700,17 @@ img {
 }
 
 .list-btn {
-  margin-bottom: 72px;
+  margin-bottom: 48px;
   border: none;
   display: flex;
-  justify-content: center;
-  gap: 24px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  max-width: 270px;
 }
+
 .btn-portfolio {
-  padding: 12px 24px;
+  padding: 8px 16px;
   background-color: var(--color-cloud);
   border: 1px solid var(--color-cornflower);
   color: var(--color-iris);
@@ -723,6 +751,7 @@ img {
   transform: translate(-50%, -50%) scale(1);
   transition: transform var(--transition); 
   padding: 72px 24px 24px 24px;
+  max-width: 392px;
 }
 
 .backdrop.is-hidden .modal {
@@ -851,7 +880,7 @@ img {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
-.modal-check:checked + .check-text span{
+.modal-check:checked + .check-text .checkbox{
   background-color: var(--color-ocean);
   border: none;
   fill: #f4f4fd;
@@ -871,15 +900,14 @@ img {
 
 .check-text {
   display: flex;
-  align-items: baseline;
-  gap: 8px;
+  align-items: center;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: var(--color-light-slate);
 }
 
-.check-text span {
+.checkbox {
     width: 16px;
     height: 16px;
     border: 1px solid rgba(46, 47, 66, 0.4);
@@ -888,8 +916,11 @@ img {
     align-items: center;
     justify-content: center;  
     fill: transparent;
+    margin-right: 8px;
+    flex-shrink: 0;
 }
-.modal-check:focus + .check-text span {
+
+.modal-check:focus + .check-text .checkbox {
   border-color: var(--color-ocean);
 }
 
@@ -1001,6 +1032,26 @@ img {
   max-width: 500px;
   margin-bottom: 36px;
 }
+.hero {
+  background-image: linear-gradient(
+    rgba(46, 47, 66, 0.7),
+    rgba(46, 47, 66, 0.7)
+  ),
+  url("../images/people-office-1-tab.jpg");
+}
+
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url("../images/people-office-1-tab-2x.jpg");
+  }
+}
+
 .section-two-list {
   flex-direction: row;
   flex-wrap: wrap;
@@ -1014,7 +1065,7 @@ img {
 }
 
 .team-container {
-  width: 552px;
+  width: 582px;
 }
 
 .team-list {
@@ -1026,7 +1077,7 @@ img {
   width: calc((100% - 24px) / 2);
 }
 .customers-container {
-  width: 552px;
+  width: 582px;
 }
 .customers-list {
   column-gap: 24px;
@@ -1051,9 +1102,35 @@ img {
   justify-content: start;
 }
 
-
 .subscribe-form {
   flex-direction: row;
+}
+.modal {
+  max-width: 408px;
+}
+.section.portfolio {
+  padding-bottom: 96px;
+}
+.list-btn {
+  margin-bottom: 64px;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 24px;
+  max-width: none;
+}
+.btn-portfolio {
+  padding: 12px 24px;
+} 
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 72px;
+  column-gap: 24px;
+}
+.projects-list-item {
+  margin-bottom: 0;
+  width: calc((100% - 24px)/2);
+}
 }
 
 @media screen and (min-width: 1200px) {
@@ -1130,11 +1207,16 @@ img {
   .customers-list-item {
     width: calc((100% - 120px)/6);
   }
-
+.footer-container {
+  justify-content: space-between;
+  width: auto;
+}
   .logo-footer-container {
     margin-right: 120px;
   }
-
+.subscribe {
+  width: auto;
+}
 .subscribe-form {
   display: flex;
   gap: 24px;
@@ -1210,9 +1292,31 @@ img {
 .contact:focus {
   color: var(--color-ocean);
 }
+
+.projects-list-item {
+  width: calc((100% - 48px)/3);
+}
+.hero {
+  background-image: linear-gradient(
+    rgba(46, 47, 66, 0.7),
+    rgba(46, 47, 66, 0.7)
+  ),
+  url("../images/people-office-1.jpg");
+}
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url("../images/people-office-1-2x.jpg");
+  }
+}
 }
 
-}
+
 
 @media screen and (max-width: 1199px) {
   .about {
