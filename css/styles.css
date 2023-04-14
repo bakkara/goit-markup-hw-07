@@ -119,8 +119,8 @@ img {
 
 /**-----Header-----**/
 .header {
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 20px;
+  padding-bottom: 21px;
   border-bottom: 1px solid var(--color-cornflower);
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
@@ -557,7 +557,7 @@ img {
 }
 
 .soc-footer-container {
-  margin-right: 80px;
+  margin-right: auto;
 }
 
 .footer-soc-link {
@@ -965,15 +965,17 @@ img {
   .address-list {
     display: flex;
     flex-direction: column;
-    gap: 0;
+    gap: 12px;
   }
 .header {
-  padding-bottom: 12px;
+  padding-bottom: 0px;
+  padding-top: 0px;
 }
 .header-item-link {
+  display: block;
   position: relative;
-  padding-top: 28px;
-  padding-bottom: 28px;
+  padding-top: 24px;
+  padding-bottom: 24px;
   font-weight: 500;
   font-size: 16px;
   letter-spacing: 0.02em;
@@ -1010,8 +1012,9 @@ img {
 }
 
 .contact {
-    font-size: 12px;
-      line-height: 1.17;
+  display: block;
+  font-size: 12px;
+  line-height: 1.17;
   letter-spacing: 0.02em;
   color: var(--color-slate);
   transition: color var(--transition);
@@ -1133,7 +1136,7 @@ img {
 }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1158px) {
   .container {
     max-width: 1158px;
   }  
@@ -1237,14 +1240,9 @@ img {
 .logo-studio-header {
   margin-right: 76px;
 }
-.header {
-  padding-top: 24px;
-  padding-bottom: 24px;
-}
+
 .header-item-link {
     position: relative;
-    padding-top: 28px;
-    padding-bottom: 28px;
     font-weight: 500;
     font-size: 16px;
     letter-spacing: 0.02em;
@@ -1314,11 +1312,14 @@ img {
     url("../images/people-office-1-2x.jpg");
   }
 }
+.section.portfolio {
+  padding-top: 100px;
+}
 }
 
 
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1157px) {
   .about {
     display: none;
   }
