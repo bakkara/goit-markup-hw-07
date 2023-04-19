@@ -11,6 +11,7 @@
   --color-grey: #2e2f42;
   --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 body {
   font-family: "Roboto", sans-serif;
   color: var(--color-slate);
@@ -237,14 +238,15 @@ img {
   outline: transparent;
 }
 
-.mobile-address {
-  margin-bottom: 0 auto;
-}
 .mobile-contacts-list {
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
+.mobile-address {
+  margin: 0 auto;
+}
+
 .mobile-contacts-mail {
   display: block;
   font-style: normal;
@@ -314,6 +316,7 @@ img {
   padding: 112px 0;
   text-align: center;
 }
+
 @media (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
@@ -687,7 +690,7 @@ img {
   position: absolute;
   top: 0;
   left: 0;
-  weight: 100%;
+  width: 100%;
   height: 100%;
   padding: 40px 32px;
   color: var(--color-cloud);
@@ -772,7 +775,7 @@ img {
   background-color: #E7E9FC;
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: fill var(--transition), background-color var(--transition), ;
+  transition: fill var(--transition), background-color var(--transition);
 }
 
 .modal-close:is(:hover, :focus) {
@@ -1102,7 +1105,6 @@ img {
   width: 264px;
 }
 .subscribe-form {
-  align-items: left;    
   justify-content: start;
 }
 
@@ -1192,7 +1194,7 @@ img {
     background-color: var(--color-cloud);
   }  
   .team-container {
-    width: 1128px;
+    width: 1158px;
   }
   .team-list {
     width: 100%;
@@ -1201,7 +1203,7 @@ img {
     width: calc((100% - 72px) / 4);
   }
   .customers-container {
-    width: 1128px;
+    width: 1158px;
   }
   .customers-list {
     gap: 24px;
